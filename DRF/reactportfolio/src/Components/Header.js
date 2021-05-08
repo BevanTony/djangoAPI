@@ -9,12 +9,29 @@ import DragHandleIcon from '@material-ui/icons/DragHandle';
 import { Switch } from '@material-ui/core';
 
 const useStyles = makeStyles((theme)=> ({
-    menuButton: {
-        marginRight: theme.spacing(2),
-      },
-      title: {
-        flexGrow: 1,
-      },
+
+    appbar:{
+        background:'none',
+    },
+    appbarWrapper:{
+        width:'80%',
+        margin: '0 auto',
+        
+    },
+    appbarTitle:{
+        flexGrow:'1',
+        fontWeight:700,
+        fontFamily:'Nunito',
+    },
+
+    colorText:{
+        color:'white',
+    },
+    icon:{
+        color: '#fff',
+        fontSize: '1rem'
+    },
+
 }))
 
 function Header(props){
@@ -26,16 +43,16 @@ const handleThemeChange = (e, value) =>{
 
     return(
         <div>
-        <AppBar position="static">
-            <Toolbar>
-                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+        <AppBar className={classes.appbar}>
+            <Toolbar className={classes.appbarWrapper}>
+                <IconButton edge="start" className={classes.icon} aria-label="menu">
                 <DragHandleIcon />
                 </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        Babantoto
+                    <Typography variant='h5' className={classes.appbarTitle}>
+                        Baban<span className={classes.colorText}>toto</span>.
                     </Typography>
                 <Switch checked={props.darkMode} onChange={handleThemeChange}/>
-                <Button color="inherit">Login</Button>
+                <Button variant='contained' color="primary">Login</Button>
             </Toolbar>
         </AppBar>
         </div>

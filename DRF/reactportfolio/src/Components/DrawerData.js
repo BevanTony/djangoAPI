@@ -9,7 +9,12 @@ DrawerData = [
     {
         text:'About',
         link:'about/',
-        icon:''
+        icon:'',
+    },
+    {
+        text:'Contact',
+        link:'contact/',
+        icon:'',
     }
 
 ]

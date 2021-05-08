@@ -12,6 +12,11 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(false)
   const theme = createMuiTheme({
+    typography: {
+      fontFamily: [
+        'Heebo',
+      ].join(','),
+    },
   
     palette: {
         type:darkMode ? 'dark' : 'light',
@@ -36,7 +41,7 @@ const handleThemeChange = () => {
      <Header darkMode={darkMode} onChange={handleThemeChange}/>
     <Router>
       <Switch>
-        <Route path='/' exact component={Landing}/>
+        <Route path='/' exact render={(props) => <Landing darkMode={darkMode}/>}/>
         <Route path='/about' exact component={About}/>
       </Switch>
     </Router>
